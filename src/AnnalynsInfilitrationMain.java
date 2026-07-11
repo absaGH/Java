@@ -10,5 +10,8 @@
 public class AnnalynsInfilitrationMain {
     public static void main(String[] args){
         System.out.println(AnnalynsInfilitration.canFastAttack(true));
+        System.out.println(AnnalynsInfilitration.canSpy(false, true, false));
+        System.out.println(AnnalynsInfilitration.canSignalPrisoner(false, true));
+        System.out.println(AnnalynsInfilitration.canFreePrisoner(false, true, false, false));
     }
 }
