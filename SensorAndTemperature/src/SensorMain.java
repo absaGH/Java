@@ -27,7 +27,7 @@ public class SensorMain {
     }catch(Exception e){
         System.out.println(e.getMessage());
     }*/
-    Sensor kumpula = new TempreatureSensor();
+    /*Sensor kumpula = new TempreatureSensor();
     kumpula.setOn();
     System.out.println("temperature in Kumpula " + kumpula.read() + " degrees Celsius");
 
@@ -40,6 +40,21 @@ public class SensorMain {
     helsinkiRegion.addSensor(helsinkiVantaaAirport);
 
     helsinkiRegion.setOn();
+    System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");*/
+    Sensor kumpula = new TempreatureSensor();
+    Sensor kaisaniemi = new TempreatureSensor();
+    Sensor helsinkiVantaaAirport = new TempreatureSensor();
+
+    AverageSensor helsinkiRegion = new AverageSensor();
+    helsinkiRegion.addSensor(kumpula);
+    helsinkiRegion.addSensor(kaisaniemi);
+    helsinkiRegion.addSensor(helsinkiVantaaAirport);
+
+    helsinkiRegion.setOn();
     System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+    System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+    System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+
+    System.out.println("readings: " + helsinkiRegion.readings());
  }
 }
