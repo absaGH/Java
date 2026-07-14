@@ -9,7 +9,7 @@
  */
 public class SensorMain {
     public static void main(String[] args) {
-    StandardSensor ten = new StandardSensor(10);
+    /*StandardSensor ten = new StandardSensor(10);
     StandardSensor minusFive = new StandardSensor(-5);
 
     System.out.println(ten.read());
@@ -17,6 +17,15 @@ public class SensorMain {
 
     System.out.println(ten.isOn());
     ten.setOff();
-    System.out.println(ten.isOn());
+    System.out.println(ten.isOn());*/
+    TempreatureSensor sensObj = new TempreatureSensor();
+    sensObj.setOn();
+    System.out.println(sensObj.read());
+    sensObj.setOff();
+    try{
+      System.out.println(sensObj.read());
+    }catch(Exception e){
+        System.out.println(e.getMessage());
+    }
 }
 }
