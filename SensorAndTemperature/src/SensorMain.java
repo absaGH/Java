@@ -18,7 +18,7 @@ public class SensorMain {
     System.out.println(ten.isOn());
     ten.setOff();
     System.out.println(ten.isOn());*/
-    TempreatureSensor sensObj = new TempreatureSensor();
+    /*TempreatureSensor sensObj = new TempreatureSensor();
     sensObj.setOn();
     System.out.println(sensObj.read());
     sensObj.setOff();
@@ -26,6 +26,20 @@ public class SensorMain {
       System.out.println(sensObj.read());
     }catch(Exception e){
         System.out.println(e.getMessage());
-    }
-}
+    }*/
+    Sensor kumpula = new TempreatureSensor();
+    kumpula.setOn();
+    System.out.println("temperature in Kumpula " + kumpula.read() + " degrees Celsius");
+
+    Sensor kaisaniemi = new TempreatureSensor();
+    Sensor helsinkiVantaaAirport = new TempreatureSensor();
+
+    AverageSensor helsinkiRegion = new AverageSensor();
+    helsinkiRegion.addSensor(kumpula);
+    helsinkiRegion.addSensor(kaisaniemi);
+    helsinkiRegion.addSensor(helsinkiVantaaAirport);
+
+    helsinkiRegion.setOn();
+    System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+ }
 }
